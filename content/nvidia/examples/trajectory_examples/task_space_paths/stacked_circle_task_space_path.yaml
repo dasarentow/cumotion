@@ -1,0 +1,106 @@
+# SPDX-FileCopyrightText: Copyright (c) 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Set rotation as anchors to be referenced by each path segment
+rotations:
+  - &R0 {w: 0.5, xyz: [-0.5, 0.5, 0.5]}
+  - &R1 {w: 0.5, xyz: [0.5, 0.5, -0.5]}
+
+# Set constants for repeated x & y positions
+constant:
+  - &x 1.25
+  - &y_min 0.05
+  - &y_max -0.05
+
+# Set arc endpoints as anchors to be referenced by each path segment
+endpoints:
+  - &E0 [*x, 0.0, 0.2]
+  - &E1 [*x, 0.0, 0.3]
+  - &E2 [*x, 0.0, 0.4]
+  - &E3 [*x, 0.0, 0.5]
+  - &E4 [*x, 0.0, 0.6]
+  - &E5 [*x, 0.0, 0.7]
+  - &E6 [*x, 0.0, 0.8]
+
+# Set arc midpoints as anchors to be referenced by each path segment
+midpoints:
+  - &M01 [*x, *y_max, 0.25]
+  - &M02 [*x, *y_min, 0.35]
+  - &M03 [*x, *y_max, 0.45]
+  - &M04 [*x, *y_min, 0.55]
+  - &M05 [*x, *y_max, 0.65]
+  - &M06 [*x, *y_min, 0.75]
+  - &M07 [*x, *y_max, 0.75]
+  - &M08 [*x, *y_min, 0.65]
+  - &M09 [*x, *y_max, 0.55]
+  - &M10 [*x, *y_min, 0.45]
+  - &M11 [*x, *y_max, 0.35]
+  - &M12 [*x, *y_min, 0.25]
+
+# Specify initial pose
+initial pose:
+  position: *E0
+  orientation: *R1
+
+# Specify series of three-point arcs with orientation targets
+path specs:
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E1, orientation: *R0 }
+    intermediate position: *M01
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E2, orientation: *R1 }
+    intermediate position: *M02
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E3, orientation: *R0 }
+    intermediate position: *M03
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E4, orientation: *R1 }
+    intermediate position: *M04
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E5, orientation: *R0 }
+    intermediate position: *M05
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E6, orientation: *R1 }
+    intermediate position: *M06
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E5, orientation: *R0 }
+    intermediate position: *M07
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E4, orientation: *R1 }
+    intermediate position: *M08
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E3, orientation: *R0 }
+    intermediate position: *M09
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E2, orientation: *R1 }
+    intermediate position: *M10
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E1, orientation: *R0 }
+    intermediate position: *M11
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose: { position: *E0, orientation: *R1 }
+    intermediate position: *M12

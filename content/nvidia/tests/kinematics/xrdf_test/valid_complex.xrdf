@@ -1,0 +1,85 @@
+# SPDX-FileCopyrightText: Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+format: xrdf
+format_version: 2.0
+
+modifiers:
+  - add_frame:
+      frame_name: "tool_frame"
+      parent_frame_name: "link2"
+      joint_name: "tool_joint"
+      joint_type: fixed
+      fixed_transform:
+        position: [0.1, 0.0, 0.0]
+        orientation:
+          quaternion: [1.0, 0.0, 0.0, 0.0]
+  
+  - add_frame:
+      frame_name: "camera_frame"
+      parent_frame_name: "link0"
+      joint_name: "camera_joint"
+      joint_type: fixed
+      fixed_transform:
+        position: [0.0, 0.2, 0.0]
+        orientation:
+          euler_rpy: [0.0, 0.0, 1.57]
+  
+  - remove_mimic_attributes:
+      joint_name: "mimic_joint"
+      position_limits: [-3.14, 3.14]
+      velocity_limit: 5.0
+
+default_joint_positions:
+  joint0: 0.5
+  joint1: -1.2
+  joint2: 0.8
+
+cspace:
+  joint_names:
+    - "joint0"
+    - "joint1"
+    - "joint2"
+  acceleration_limits: [10.0, 20.0, 30.0]
+  jerk_limits: [100.0, 200.0, 300.0]
+
+tool_frames: ["tool_frame", "camera_frame", "link2"]
+
+collision:
+  geometry: "test_collision_spheres"
+  buffer_distance:
+    link0: 0.01
+    link1: 0.02
+    link2: 0.01
+  self_collision_mask:
+    - ["link0", "link1"]
+    - ["link1", "link2"]
+    - ["link0", "link2"]
+
+geometry:
+  test_collision_spheres:
+    spheres:
+      link0:
+        - center: [0.0, 0.0, 0.0]
+          radius: 0.1
+      link1:
+        - center: [0.0, 0.0, 0.0]
+          radius: 0.1
+      link2:
+        - center: [0.0, 0.0, 0.0]
+          radius: 0.1
+      tool_frame:
+        - center: [0.0, 0.0, 0.0]
+          radius: 0.05

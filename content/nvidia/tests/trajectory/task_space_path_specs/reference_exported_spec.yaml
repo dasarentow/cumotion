@@ -1,0 +1,55 @@
+# SPDX-FileCopyrightText: Copyright (c) 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+initial pose:
+  position: [0, 0, 0]
+  orientation: {w: 1, xyz: [0, 0, 0]}
+path specs:
+  - position mode: linear
+    orientation mode: slerp
+    target pose:
+      position: [0.5, 0, 0]
+      orientation: {w: 0, xyz: [0, 0, 1]}
+  - position mode: linear
+    orientation mode: constant
+    target position: [0.5, 1, 0]
+  - position mode: constant
+    orientation mode: slerp
+    target orientation: {w: 0, xyz: [0, 1, 0]}
+  - position mode: three_point_arc
+    orientation mode: constant
+    target position: [0.5, 2, 0]
+    intermediate position: [1, 1.5, 0]
+  - position mode: three_point_arc
+    orientation mode: tangent
+    target position: [0.5, 3, 0]
+    intermediate position: [0, 2.5, 0]
+  - position mode: three_point_arc
+    orientation mode: slerp
+    target pose:
+      position: [0.5, 4, 0]
+      orientation: {w: 0, xyz: [0, 0, 1]}
+    intermediate position: [0, 3.5, 0]
+  - position mode: tangent_arc
+    orientation mode: constant
+    target position: [2, 2, 0]
+  - position mode: tangent_arc
+    orientation mode: tangent
+    target position: [5, 1, 0]
+  - position mode: tangent_arc
+    orientation mode: slerp
+    target pose:
+      position: [6, 2, 0]
+      orientation: {w: 0, xyz: [0, 0, 1]}

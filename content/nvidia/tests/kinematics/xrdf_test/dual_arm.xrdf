@@ -1,0 +1,129 @@
+# SPDX-FileCopyrightText: Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+format: xrdf
+format_version: 2.0
+
+default_joint_positions:
+  left_shoulder: 0.0
+  left_elbow: -0.5
+  left_wrist: 0.0
+  right_shoulder: 0.0
+  right_elbow: 0.5
+  right_wrist: 0.0
+
+cspace:
+  joint_names:
+    - "left_shoulder"
+    - "left_elbow"
+    - "left_wrist"
+    - "right_shoulder"
+    - "right_elbow"
+    - "right_wrist"
+  acceleration_limits: [8.0, 8.0, 8.0, 8.0, 8.0, 8.0]
+  jerk_limits: [80.0, 80.0, 80.0, 80.0, 80.0, 80.0]
+
+tool_frames: ["left_hand", "right_hand"]
+
+# World collision uses coarse spheres for torso and minimal spheres for hands
+world_collision:
+  geometry: "world_collision_spheres"
+  buffer_distance:
+    torso: 0.003
+    left_hand: 0.003
+    right_hand: 0.003
+
+# Self collision uses detailed spheres for arms and minimal spheres for hands
+self_collision:
+  geometry: "self_collision_spheres"
+  buffer_distance:
+    left_upper_arm: 0.05
+    left_forearm: 0.05
+    right_upper_arm: 0.05
+    right_forearm: 0.05
+    left_hand: 0.02
+    right_hand: 0.02
+  ignore:
+    left_upper_arm: ["left_forearm"]
+    left_forearm: ["left_hand"]
+    right_upper_arm: ["right_forearm"]
+    right_forearm: ["right_hand"]
+
+geometry:
+  # Base geometry groups
+  coarse_spheres:
+    spheres:
+      torso:
+        - center: [0.0, 0.0, 0.0]
+          radius: 0.2
+        - center: [0.0, 0.0, 0.3]
+          radius: 0.2
+      left_hand:
+        - center: [0.0, 0.2, 1.0]
+          radius: 0.08
+      right_hand:
+        - center: [0.0, -0.2, 1.0]
+          radius: 0.08
+
+  detailed_arm_spheres:
+    spheres:
+      left_upper_arm:
+        - center: [0.0, 0.2, 0.2]
+          radius: 0.06
+        - center: [0.0, 0.2, 0.3]
+          radius: 0.06
+        - center: [0.0, 0.2, 0.4]
+          radius: 0.06
+      left_forearm:
+        - center: [0.0, 0.2, 0.6]
+          radius: 0.05
+        - center: [0.0, 0.2, 0.7]
+          radius: 0.05
+        - center: [0.0, 0.2, 0.8]
+          radius: 0.05
+      right_upper_arm:
+        - center: [0.0, -0.2, 0.2]
+          radius: 0.06
+        - center: [0.0, -0.2, 0.3]
+          radius: 0.06
+        - center: [0.0, -0.2, 0.4]
+          radius: 0.06
+      right_forearm:
+        - center: [0.0, -0.2, 0.6]
+          radius: 0.05
+        - center: [0.0, -0.2, 0.7]
+          radius: 0.05
+        - center: [0.0, -0.2, 0.8]
+          radius: 0.05
+
+  minimal_hand_spheres:
+    spheres:
+      left_hand:
+        - center: [0.0, 0.2, 0.95]
+          radius: 0.04
+        - center: [0.0, 0.2, 1.05]
+          radius: 0.04
+      right_hand:
+        - center: [0.0, -0.2, 0.95]
+          radius: 0.04
+        - center: [0.0, -0.2, 1.05]
+          radius: 0.04
+
+  # Combined groups using clone
+  world_collision_spheres:
+    clone: ["coarse_spheres", "minimal_hand_spheres"]
+
+  self_collision_spheres:
+    clone: ["detailed_arm_spheres", "minimal_hand_spheres"]

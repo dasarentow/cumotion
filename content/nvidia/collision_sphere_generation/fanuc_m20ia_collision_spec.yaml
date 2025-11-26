@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: Copyright (c) 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+mesh_directory: "content/third_party/fanuc/m20ia/meshes/visual"
+collision_spheres:
+  - name: "base_link"
+    mesh: "base_link.stl"
+    num_spheres: 8
+    radius_offset: 0.01
+  - name: "link_1"
+    mesh: "link_1.stl"
+    num_spheres: 8
+    radius_offset: 0.01
+  - name: "link_2"
+    mesh: "link_2.stl"
+    num_spheres: 12
+    radius_offset: 0.01
+  - name: "link_3"
+    mesh: "link_3.stl"
+    num_spheres: 10
+    radius_offset: 0.01
+  - name: "link_4"
+    mesh: "link_4.stl"
+    num_spheres: 12
+    radius_offset: 0.01
+  - name: "link_5"
+    mesh: "link_5.stl"
+    num_spheres: 8
+    radius_offset: 0.005
+  - name: "link_6"
+    mesh: "link_6.stl"
+    num_spheres: 10
+    radius_offset: 0.005

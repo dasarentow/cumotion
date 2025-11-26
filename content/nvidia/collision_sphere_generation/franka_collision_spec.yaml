@@ -1,0 +1,61 @@
+# SPDX-FileCopyrightText: Copyright (c) 2022 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+mesh_directory: "content/third_party/franka/meshes/"
+collision_spheres:
+  - name: "panda_link0"
+    mesh: "panda_link0.stl"
+    num_spheres: 2
+    radius_offset: 0.03
+  - name: "panda_link1"
+    mesh: "panda_link1.stl"
+    num_spheres: 6
+    radius_offset: 0.01
+  - name: "panda_link2"
+    mesh: "panda_link2.stl"
+    num_spheres: 5
+    radius_offset: 0.01
+  - name: "panda_link3"
+    mesh: "panda_link3.stl"
+    num_spheres: 4
+    radius_offset: 0.01
+  - name: "panda_link4"
+    mesh: "panda_link4.stl"
+    num_spheres: 4
+    radius_offset: 0.01
+  - name: "panda_link5"
+    mesh: "panda_link5.stl"
+    num_spheres: 12
+    radius_offset: 0.015
+  - name: "panda_link6"
+    mesh: "panda_link6.stl"
+    num_spheres: 6
+    radius_offset: 0.01
+  - name: "panda_link7"
+    mesh: "panda_link7.stl"
+    num_spheres: 10
+    radius_offset: 0.01
+  - name: "panda_hand"
+    mesh: "panda_hand.stl"
+    num_spheres: 18
+    radius_offset: 0.007
+  - name: "panda_leftfinger"
+    mesh: "panda_leftfinger.stl"
+    num_spheres: 30
+    radius_offset: 0.001
+  - name: "panda_rightfinger"
+    mesh: "panda_rightfinger.stl"
+    num_spheres: 30
+    radius_offset: 0.001

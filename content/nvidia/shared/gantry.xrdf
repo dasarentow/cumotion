@@ -1,0 +1,43 @@
+# SPDX-FileCopyrightText: Copyright (c) 2024-2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+format: xrdf
+format_version: 2.0
+
+default_joint_positions:
+  x_slide: 0.0
+  y_slide: 0.0
+  z_slide: 0.0
+
+cspace:
+  joint_names:
+    - "x_slide"
+    - "y_slide"
+    - "z_slide"
+  acceleration_limits: [100.0, 100.0, 100.0]
+  jerk_limits: [1000.0, 1000.0, 1000.0]
+
+world_collision:
+  geometry: "gantry_collision_spheres"
+
+self_collision:
+  geometry: "gantry_collision_spheres"
+
+geometry:
+  gantry_collision_spheres:
+    spheres:
+      link2:
+        - center: [ 0.0, 0.0, 0.0 ]
+          radius: 0.1

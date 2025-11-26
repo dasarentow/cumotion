@@ -1,0 +1,25 @@
+# Build related
+build*/
+cmake-build*/
+devel
+venv
+.venv/
+dist
+.cache/
+.idea/
+*.egg-info/
+
+# Libraries
+*.so
+
+# IDE related
+*.vscode/
+
+# Temporary files
+.DS_Store
+*.pyc
+*.rdb
+*.swp
+*.swo
+*.swa
+*checkpoint.ipynb

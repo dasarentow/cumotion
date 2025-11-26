@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2021 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+SPDX-License-Identifier: Apache-2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<robot name="cart_pole">
+    <link name="base"/>
+    <link name="cart">
+        <visual>
+            <geometry>
+                <box size="0.1 0.1 0.1"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="slide" type="prismatic">
+        <parent link="base"/>
+        <child link="cart"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit effort="100" lower="-1.0" upper="1.0" velocity="100"/>
+    </joint>
+    <link name="pole_base">
+        <visual>
+            <geometry>
+                <cylinder length="1.0" radius="0.03"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0.5"/>
+        </visual>
+    </link>
+    <joint name="rotation" type="revolute">
+        <parent link="cart"/>
+        <child link="pole_base"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit effort="100" lower="-6.0" upper="6.0" velocity="100"/>
+    </joint>
+    <link name="pole_tip">
+        <visual>
+            <geometry>
+                <sphere radius="0.05"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="end" type="fixed">
+        <parent link="pole_base"/>
+        <child link="pole_tip"/>
+        <origin rpy="0 0 0" xyz="0 0 1"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+</robot>

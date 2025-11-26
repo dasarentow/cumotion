@@ -1,0 +1,70 @@
+# SPDX-FileCopyrightText: Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+format: xrdf
+format_version: 1.0
+
+default_joint_positions:
+  joint1: 0.0
+  joint2: 0.2
+  joint3: -0.3
+
+cspace:
+  joint_names:
+    - "joint1"
+    - "joint2"
+    - "joint3"
+  acceleration_limits: [8.0, 8.0, 8.0]
+  jerk_limits: [80.0, 80.0, 80.0]
+
+tool_frames: ["end_effector1", "end_effector2"]
+
+collision:
+  geometry: "detailed_robot"
+  buffer_distance:
+    base: 0.003
+    end_effector1: 0.005
+
+self_collision:
+  geometry: "basic_robot"
+  buffer_distance:
+    link1: 0.04
+  ignore:
+    link1: ["base"]
+    
+geometry:
+  basic_robot:
+    spheres:
+      base:
+        - center: [0.0, 0.0, 0.0]
+          radius: 0.2
+        - center: [0.0, 0.0, 0.3]
+          radius: 0.2
+      link1:
+        - center: [0.1, 0.0, 0.2]
+          radius: 0.05
+  detailed_robot:
+    spheres:
+      base:
+        - center: [0.0, 0.0, 0.0]
+          radius: 0.2
+        - center: [0.0, 0.0, 0.3]
+          radius: 0.2
+      link1:
+        - center: [0.1, 0.0, 0.2]
+          radius: 0.05
+      end_effector1:
+        - center: [0.3, 0.0, 0.4]
+          radius: 0.02

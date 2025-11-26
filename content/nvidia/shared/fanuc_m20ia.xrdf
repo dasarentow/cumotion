@@ -1,0 +1,188 @@
+# SPDX-FileCopyrightText: Copyright (c) 2022-2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+format: xrdf
+format_version: 2.0
+
+default_joint_positions:
+  joint_1: 0.0
+  joint_2: 0.0
+  joint_3: 0.0
+  joint_4: 0.0
+  joint_5: 0.0
+  joint_6: 0.0
+
+cspace:
+  joint_names:
+    - "joint_1"
+    - "joint_2"
+    - "joint_3"
+    - "joint_4"
+    - "joint_5"
+    - "joint_6"
+  acceleration_limits: [30.0, 30.0, 30.0, 30.0, 30.0, 30.0]
+  jerk_limits: [7500.0, 7500.0, 7500.0, 7500.0, 7500.0, 7500.0]
+
+world_collision:
+  geometry: "fanuc_m20ia_collision_spheres"
+
+self_collision:
+  geometry: "fanuc_m20ia_collision_spheres"
+  ignore:
+    base_link: [ "link_1" ]
+    link_1: [ "link_2" ]
+    link_2: [ "link_3" ]
+    link_3: [ "link_4" ]
+    link_4: [ "link_5" ]
+    link_5: [ "link_6" ]
+
+geometry:
+  fanuc_m20ia_collision_spheres:
+    spheres:
+      base_link:
+        - center: [ 0.0139659, 0.00100517, 0.156179 ]
+          radius: 0.171563
+        - center: [ -0.0562002, 0.00902912, 0.131057 ]
+          radius: 0.153032
+        - center: [ 0.0735428, -0.0711849, 0.0923377 ]
+          radius: 0.111338
+        - center: [ 0.0872245, 0.0797388, 0.0803406 ]
+          radius: 0.102072
+        - center: [ -0.0671278, -0.048704, 0.110869 ]
+          radius: 0.129869
+        - center: [ -0.0382024, 0.0021775, 0.197733 ]
+          radius: 0.143767
+        - center: [ -0.106497, 0.0969141, 0.06542 ]
+          radius: 0.0881742
+        - center: [ 0.0254094, -0.010778, 0.190182 ]
+          radius: 0.153032
+      link_1:
+        - center: [ 0.0718511, 0.0579115, -0.0447 ]
+          radius: 0.176678
+        - center: [ 0.0669425, 0.0192929, -0.0650813 ]
+          radius: 0.174017
+        - center: [ 0.135859, -0.0202787, -0.00219042 ]
+          radius: 0.139422
+        - center: [ -0.0340186, -0.0569394, -0.13052 ]
+          radius: 0.107488
+        - center: [ 0.126634, 0.152986, -0.0174151 ]
+          radius: 0.118133
+        - center: [ -0.0179224, 0.0399046, -0.107623 ]
+          radius: 0.128777
+        - center: [ 0.117982, -0.0487977, -0.12359 ]
+          radius: 0.11281
+        - center: [ 0.0560725, 0.0766554, -0.0800745 ]
+          radius: 0.15805
+      link_2:
+        - center: [ 0.00366314, -0.158998, 0.442264 ]
+          radius: 0.113491
+        - center: [ -0.000136588, -0.161348, 0.129985 ]
+          radius: 0.113491
+        - center: [ -0.000500072, -0.159124, 0.295552 ]
+          radius: 0.113491
+        - center: [ -0.00137347, -0.161072, 0.663306 ]
+          radius: 0.10527
+        - center: [ -0.000440059, -0.163143, 0.520152 ]
+          radius: 0.113491
+        - center: [ -0.0207558, -0.156485, 0.00906034 ]
+          radius: 0.0929376
+        - center: [ 0.00185155, -0.151772, 0.750627 ]
+          radius: 0.0970483
+        - center: [ -0.0069382, -0.15687, 0.229731 ]
+          radius: 0.113491
+        - center: [ 0.0450188, -0.15778, 0.000844358 ]
+          radius: 0.0847161
+        - center: [ 0.00469735, -0.16053, 0.341676 ]
+          radius: 0.113491
+        - center: [ -0.000367408, -0.166089, 0.574089 ]
+          radius: 0.10938
+        - center: [ -0.00125963, -0.145755, -0.071136 ]
+          radius: 0.0682733
+      link_3:
+        - center: [ 0.129236, 0.0235699, 0.0687011 ]
+          radius: 0.14973
+        - center: [ 0.163311, 0.00970055, 0.205138 ]
+          radius: 0.133805
+        - center: [ 0.037117, 0.0191697, 0.0365678 ]
+          radius: 0.133805
+        - center: [ 0.104902, 0.0134963, 0.158644 ]
+          radius: 0.136459
+        - center: [ 0.183163, 0.0102262, 0.149697 ]
+          radius: 0.139113
+        - center: [ 0.149212, 0.000835017, 0.246704 ]
+          radius: 0.120534
+        - center: [ 0.28193, 0.00394056, 0.217041 ]
+          radius: 0.0833744
+        - center: [ 0.0124323, 0.0526052, 0.00942904 ]
+          radius: 0.109917
+        - center: [ -0.0143257, -0.0098985, 0.0487718 ]
+          radius: 0.0992998
+        - center: [ 0.130452, 0.0524078, 0.0335544 ]
+          radius: 0.123188
+      link_4:
+        - center: [ 0.616468, -0.0374886, -0.000681819 ]
+          radius: 0.0956319
+        - center: [ 0.413577, -0.0338176, 0.00163189 ]
+          radius: 0.0956319
+        - center: [ 0.309071, -0.0205124, -0.00189387 ]
+          radius: 0.0899993
+        - center: [ 0.510191, -0.0331535, -0.00163189 ]
+          radius: 0.0956319
+        - center: [ 0.704507, -0.0536379, -0.00118847 ]
+          radius: 0.0843667
+        - center: [ 0.806332, -0.0705375, 0.0117926 ]
+          radius: 0.0674689
+        - center: [ 0.773682, -0.0675051, -0.0169876 ]
+          radius: 0.0731015
+        - center: [ 0.35816, -0.0322119, 0.000325073 ]
+          radius: 0.0928156
+        - center: [ 0.58171, -0.0430226, -0.00163189 ]
+          radius: 0.0956319
+        - center: [ 0.457741, -0.0427919, -0.00163189 ]
+          radius: 0.0956319
+        - center: [ 0.847988, -0.0771991, -0.0363812 ]
+          radius: 0.0533874
+        - center: [ 0.734148, -0.0593135, 0.0133786 ]
+          radius: 0.0787341
+      link_5:
+        - center: [ 0.0394601, -0.00631371, 6.56279e-05 ]
+          radius: 0.0583131
+        - center: [ -0.000140206, -0.0239398, -0.0110341 ]
+          radius: 0.0442944
+        - center: [ 0.0408408, -0.00916243, 0.0125076 ]
+          radius: 0.0583131
+        - center: [ 0.0406967, -0.00791687, -0.0107631 ]
+          radius: 0.0583131
+        - center: [ 0.00166839, -0.0266524, 0.0270788 ]
+          radius: 0.0407897
+        - center: [ 0.0511615, 0.0220837, -0.00412092 ]
+          radius: 0.0442944
+        - center: [ -0.0295579, -0.0341135, 0.000552866 ]
+          radius: 0.0337804
+        - center: [ -0.00702968, -0.0344543, -0.0386416 ]
+          radius: 0.0337804
+      link_6:
+        - center: [ -0.0196088, -0.000959657, -0.00987591 ]
+          radius: 0.0200752
+        - center: [ -0.0178248, -0.00963664, 0.007418 ]
+          radius: 0.0200752
+        - center: [ -0.0178248, 0.00990094, 7.93713e-05 ]
+          radius: 0.0200752
+        - center: [ -0.0210752, 0.0036379, 0.0106026 ]
+          radius: 0.0200752
+        - center: [ -0.0178248, -0.011608, -0.00378254 ]
+          radius: 0.0200752
+        - center: [ -0.0210752, 0.00449232, -0.0112625 ]
+          radius: 0.0200752
